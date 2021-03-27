@@ -10,5 +10,5 @@ urlpatterns = [
     # path('', include(router.urls)),
     # path('api-auth', include('rest_framework.urls', namespace="rest_framework")),
     path('handle_request', views.handleRequest.as_view()),
-    path('handle_substitution_request', views.handleSubstituteRequest.as_view())
+    #path('handle_substitution_request', views.handleSubstituteRequest.as_view())
 ]
