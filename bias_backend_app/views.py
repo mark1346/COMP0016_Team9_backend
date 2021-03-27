@@ -39,14 +39,16 @@ class handleRequest(APIView):
     def post(self, request):
         logger = logging.getLogger('test')
 
-    
-        # if "application/json" in request.META['CONTENT_TYPE']:
-        #     requestBody = json.loads(request.body)
-        # else:
-        #     requestBody = request.POST.get('requestBody')
+        requestBody = None
+
+        if "application/json" in request.META['CONTENT_TYPE']:
+            print('req is loaded')
+            requestBody = json.loads(request.body)
+            print(requestBody['preference'])
+        else:
+            requestBody = request.POST.get('requestBody')
         # print(requestBody.keys())
 
-        requestBody = json.loads(request.body)
         file_string = requestBody['file_obj']
         preference = requestBody['preference']
         model = requestBody['model']
