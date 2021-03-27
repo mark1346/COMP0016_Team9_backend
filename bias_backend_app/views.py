@@ -43,7 +43,7 @@ class handleRequest(APIView):
         if "application/json" in request.META['CONTENT_TYPE']:
             requestBody = json.loads(request.body)
         else:
-            requestBody = request.POST.get('requestBody', False)
+            requestBody = request.POST.get('requestBody')
         # print(requestBody.keys())
 
         file_string = requestBody['file_obj']
