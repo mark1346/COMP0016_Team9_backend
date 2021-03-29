@@ -2,7 +2,7 @@ from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import render
 
 from rest_framework import viewsets
-from .serializers import WordPairSerializer, WordSerializer
+# from .serializers import WordPairSerializer, WordSerializer
 # from .models import WordPair, Word, UserConfig
 from rest_framework.views import APIView
 import json
@@ -23,14 +23,14 @@ import io
 from pdf2image import convert_from_bytes
 # Create your views here.
 
-class WordPairViewSet(viewsets.ModelViewSet):
-    queryset = WordPair.objects.all().order_by('pair1')
-    serializer_class  = WordPairSerializer
+# class WordPairViewSet(viewsets.ModelViewSet):
+#     queryset = WordPair.objects.all().order_by('pair1')
+#     serializer_class  = WordPairSerializer
 
-class WordViewSet(viewsets.ModelViewSet):
-    queryset = Word.objects.only('word')
-    print(queryset)
-    serializer_class  = WordSerializer
+# class WordViewSet(viewsets.ModelViewSet):
+#     queryset = Word.objects.only('word')
+#     print(queryset)
+#     serializer_class  = WordSerializer
 
 
 
