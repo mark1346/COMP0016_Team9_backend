@@ -95,7 +95,7 @@ class handleRequest(APIView):
         
         #defalut model is GoogleNews
         #Change the choosen_model_address path to GoogleNewsModel location
-        choosen_model_address = "/Users/markhan/UCL_CS/System_Engineering/final/bias-detect/bias_backend/bias_backend/bias_backend/bias_backend_app/Algorithm/GoogleNews-vectors-negative300.bin.gz"
+        choosen_model_address = "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz"
 
         if model == 'model1': #model1 -> GoogleNews
             # cc.setType(2)
@@ -103,8 +103,12 @@ class handleRequest(APIView):
             # cc.changeUrl(choosen_model_address)
 
             # -----when deploy------
-            cc.setType(0)
-            cc.setModelSelection(3)
+            # cc.setType(0)
+            # cc.setModelSelection(3)
+
+            cc.setType(2)
+            choosen_model_address = "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz"
+            cc.changeUrl(choosen_model_address)
 
         elif model == 'model2': 
             cc.setType(0)
