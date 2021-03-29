@@ -54,7 +54,7 @@ class handleRequest(APIView):
             print('req body is none')
 
         print(requestBody['preference'])
-        
+
         file_string = requestBody['file_obj']
         preference = requestBody['preference']
         model = requestBody['model']
@@ -98,13 +98,13 @@ class handleRequest(APIView):
         choosen_model_address = "/Users/markhan/UCL_CS/System_Engineering/final/bias-detect/bias_backend/bias_backend/bias_backend/bias_backend_app/Algorithm/GoogleNews-vectors-negative300.bin.gz"
 
         if model == 'model1': #model1 -> GoogleNews
-            cc.setType(2)
-            choosen_model_address = "/Users/markhan/UCL_CS/System_Engineering/final/bias-detect/bias_backend/bias_backend/bias_backend/bias_backend_app/Algorithm/GoogleNews-vectors-negative300.bin.gz"
-            cc.changeUrl(choosen_model_address)
+            # cc.setType(2)
+            # choosen_model_address = "/Users/markhan/UCL_CS/System_Engineering/final/bias-detect/bias_backend/bias_backend/bias_backend/bias_backend_app/Algorithm/GoogleNews-vectors-negative300.bin.gz"
+            # cc.changeUrl(choosen_model_address)
 
             # -----when deploy------
-            # cc.setType(0)
-            # cc.setModelSelection(3)
+            cc.setType(0)
+            cc.setModelSelection(3)
 
         elif model == 'model2': 
             cc.setType(0)
