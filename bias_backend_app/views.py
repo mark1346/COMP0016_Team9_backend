@@ -48,11 +48,13 @@ class handleRequest(APIView):
         else:
             requestBody = request.POST.get('requestBody')
         # print(requestBody.keys())
+        print(request)
 
         if(requestBody is None):
             print('req body is none')
-            
+
         print(requestBody['preference'])
+        
         file_string = requestBody['file_obj']
         preference = requestBody['preference']
         model = requestBody['model']

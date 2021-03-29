@@ -95,6 +95,7 @@ class biasAlgorithm:
         tokens = tokenizer.tokenize(sentence)
         formattedTokens = [word.lower() for word in tokens]
         results = []
+        nltk.download('stopwords')
         stopwords = self.getStopWords()
         for token in formattedTokens:
                 if token in stopwords:
@@ -125,8 +126,7 @@ class biasAlgorithm:
 
     def getSynonyms(self,word):
         synonyms = set()
-        #wordnet
-        #nltk.download('wordnet')
+        nltk.download('wordnet')
         synList = wordnet.synsets(word)
         for x in wordnet.synsets(word):
             for y in x.lemmas():
