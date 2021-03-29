@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 from rest_framework import viewsets
 from .serializers import WordPairSerializer, WordSerializer
-from .models import WordPair, Word, UserConfig
+# from .models import WordPair, Word, UserConfig
 from rest_framework.views import APIView
 import json
 from .Algorithm import controller

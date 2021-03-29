@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import WordPair, Word, UserConfig
+# from .models import WordPair, Word, UserConfig
 
 # Register your models here.
 
